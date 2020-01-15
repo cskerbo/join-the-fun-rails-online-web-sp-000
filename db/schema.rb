@@ -10,23 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140212205319) do
+ActiveRecord::Schema.define(version: 20140212205318) do
 
   create_table "passengers", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "passengers_taxis", id: false, force: :cascade do |t|
-    t.integer "taxi_id",      null: false
-    t.integer "passenger_id", null: false
-    t.index ["passenger_id"], name: "index_passengers_taxis_on_passenger_id"
-    t.index ["taxi_id"], name: "index_passengers_taxis_on_taxi_id"
-  end
-
   create_table "rides", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index [nil], name: "index_rides_on_passenger_id"
+    t.index [nil], name: "index_rides_on_taxi_id"
   end
 
   create_table "taxis", force: :cascade do |t|
