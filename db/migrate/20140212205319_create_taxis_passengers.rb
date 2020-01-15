@@ -5,3 +5,4 @@ class CreateTaxisPassengers < ActiveRecord::Migration
   t.index :passenger_id
   end
 end
+end
